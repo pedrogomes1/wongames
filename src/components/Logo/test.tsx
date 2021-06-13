@@ -1,5 +1,6 @@
-import { render, screen } from '@testing-library/react'
+import { screen } from '@testing-library/react'
 import { renderWithTheme } from 'utils/tests/helpers'
+import 'jest-styled-components'
 
 import Logo from '.'
 
@@ -32,5 +33,12 @@ describe('<Logo />', () => {
       width: '11rem',
       height: '3.3rem'
     })
+  })
+
+  it('should render a bigger logo without text if hideOnMobile', () => {
+    renderWithTheme(<Logo hideOnMobile />)
+    expect(
+      screen.getByLabelText(/Won Games/i).parentElement
+    ).toHaveStyleRule('width', '5.8rem', { media: '(max-width: 768px)' })
   })
 })
