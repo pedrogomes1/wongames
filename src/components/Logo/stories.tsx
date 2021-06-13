@@ -8,6 +8,10 @@ export default {
     color: {
       type: 'select',
       options: ['white', 'black']
+    },
+    size: {
+      type: 'select',
+      options: ['normal', 'large']
     }
   }
 } as Meta
