@@ -25,7 +25,7 @@ describe('<Heading />', () => {
     renderWithTheme(<Heading lineLeft>Won games</Heading>)
 
     expect(screen.getByRole('heading', { name: /Won games/i })).toHaveStyle({
-      'border-left': '0.7rem solid #3CD3C1'
+      'border-left': '0.7rem solid #F231A5'
     })
   })
 
@@ -39,5 +39,35 @@ describe('<Heading />', () => {
         modifier: '::after'
       }
     )
+  })
+
+  it('should render a heading with a small size', () => {
+    renderWithTheme(<Heading size="small">Won games</Heading>)
+
+    expect(screen.getByRole('heading', { name: /Won games/i })).toHaveStyle({
+      'font-size': '1.6rem'
+    })
+
+    expect(screen.getByRole('heading', { name: /Won games/i })).toHaveStyleRule(
+      'width',
+      '3rem',
+      {
+        modifier: '::after'
+      }
+    )
+  })
+
+  it('should render a heading with a secondary line color', () => {
+    renderWithTheme(
+      <Heading lineColor="secondary" lineBottom lineLeft>
+        Won games
+      </Heading>
+    )
+
+    const heading = screen.getByRole('heading', { name: /won games/i })
+    expect(heading).toHaveStyle({ 'border-left': '0.7rem solid #3CD3C1' })
+    expect(heading).toHaveStyleRule('border-bottom', '0.4rem solid #3CD3C1', {
+      modifier: '::after'
+    })
   })
 })
