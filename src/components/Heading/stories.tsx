@@ -7,6 +7,14 @@ export default {
   argTypes: {
     children: {
       type: 'string'
+    },
+    size: {
+      type: 'select',
+      options: ['small', 'medium']
+    },
+    color: {
+      type: 'select',
+      options: ['white', 'black']
     }
   }
 } as Meta
