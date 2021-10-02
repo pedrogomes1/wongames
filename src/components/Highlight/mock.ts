@@ -1,4 +1,4 @@
-export const item = {
+export default {
   title: 'Read Dead is back!',
   subtitle: 'Come see John’s new adventures',
   backgroundImage: '/images/red-dead-img.jpg',

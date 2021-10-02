@@ -1,5 +1,5 @@
 import { Story, Meta } from '@storybook/react/types-6-0'
-import { items } from './mock'
+import items from './mock'
 import { GameCardProps } from 'components/GameCard'
 import GameCardSlider from '.'
 
